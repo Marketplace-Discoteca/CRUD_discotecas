@@ -1,4 +1,4 @@
-from django import forms
+from django import forms # type: ignore
 from .models import Discoteca
 
 class DiscotecaForm(forms.ModelForm):
@@ -18,11 +18,9 @@ class DiscotecaForm(forms.ModelForm):
             'sucursales': forms.SelectMultiple(attrs={'class': 'form-control'}),
             'ubicacion_latitud': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Latitud'}),
             'ubicacion_longitud': forms.NumberInput(attrs={'class': 'form-control', 'placeholder': 'Longitud'}),
-            'red_social1': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese las redes sociales'}),
-            'red_social2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese las redes sociales'}),
-            'red_social3': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese las redes sociales'}),
+            'red_social1': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese URL de la red social'}),
+            'red_social2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese URL de la red social'}),
+            'red_social3': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'Ingrese URL de la red social'}),
             'url_video1': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'URL del video'}),
             'url_video2': forms.URLInput(attrs={'class': 'form-control', 'placeholder': 'URL del video'}),
-
-
         }

@@ -1,19 +1,14 @@
-<!-- templates/base.html -->
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Discoteca</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Otros estilos si es necesario -->
 </head>
 <body class="bg-dark text-white">
     <div class="container custom-container">
-        <!-- Aquí se insertará el contenido de cada vista -->
         {% block content %}
         {% endblock %}
     </div>
@@ -24,19 +19,16 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <style>
-        /* CSS personalizado para ajustar el ancho según el tamaño del dispositivo */
         .custom-container {
-            width: 95%; /* Ancho por defecto para pantallas pequeñas */
+            width: 95%;
         }
 
-        /* Para pantallas medianas (768px o más) */
         @media (min-width: 768px) {
             .custom-container {
                 width: 75%;
             }
         }
 
-        /* Para pantallas grandes (992px o más) */
         @media (min-width: 992px) {
             .custom-container {
                 width: 50%;
