@@ -1,0 +1,16 @@
+<!-- crear_discoteca.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Editar Discoteca: {{ form.instance.nombre }}</h1>
+
+<form method="POST" class="form-group">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+</form>
+
+<a href="{% url 'listar_discotecas' %}">Volver a la lista de discotecas</a>
+{% endblock %}
+
+

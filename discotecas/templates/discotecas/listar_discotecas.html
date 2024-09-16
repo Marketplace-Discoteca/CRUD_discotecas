@@ -1,0 +1,36 @@
+<!-- templates/discotecas/listar_discotecas.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Discotecas Registradas</h1>
+<a href="{% url 'crear_discoteca' %}" class="btn btn-primary mb-3">Registrar nueva discoteca</a>
+
+<!-- Tabla para mostrar las discotecas en formato de grilla -->
+<div class="table-responsive">
+  <table class="table table-bordered table-striped table-hover">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Dirección</th>
+        <th scope="col">Horario</th>
+        <th scope="col">Género</th>
+        <th scope="col">Acciones</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for discoteca in discotecas %}
+      <tr>
+        <td class="text-white">{{ discoteca.nombre }}</td>
+        <td class="text-white">{{ discoteca.direccion }}</td>
+        <td class="text-white">{{ discoteca.horario }}</td>
+        <td class="text-white">{{ discoteca.genero }}</td>
+        <td >
+          <a href="{% url 'editar_discoteca' discoteca.id %}" class="btn btn-primary text-white btn-sm">Editar</a>
+          <a href="{% url 'eliminar_discoteca' discoteca.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+{% endblock %}

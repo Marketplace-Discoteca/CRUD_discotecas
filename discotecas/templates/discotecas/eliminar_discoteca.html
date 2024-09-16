@@ -1,0 +1,6 @@
+<h1>Eliminar Discoteca</h1>
+<p>¿Estás seguro que deseas eliminar {{ discoteca.nombre }}?</p>
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Eliminar</button>
+</form>
